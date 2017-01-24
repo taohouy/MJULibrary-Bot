@@ -33,7 +33,7 @@ if(preg_match('[time|current time|now]', strtolower($message))) {
 } else {
     $message_to_reply = 'Huh! what do you mean?';
 }
-$sender = '1243289405732863';
+$sender = '445380682252861';
 $message_to_reply = 'เตรียมพบกับ แม่โจ้บุ๊คแฟร์ 2017 พร้อมกิจกรรมมากมาย 7-9 กุมภาพันธ์ 2560 นี้\nติดตามข่าวสารได้ที่ http://library.mju.ac.th/activity/bookfair2017/';
 //API Url
 $url = 'https://graph.facebook.com/v2.8/me/messages?access_token='.$access_token;
