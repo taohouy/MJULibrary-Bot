@@ -34,7 +34,7 @@ $getmessage = explode("#",$message);
 
 //if(preg_match('RegisterLibraryAlert', $message)) {
     
-//if("สมัครบริการแจ้งเตือน" == $getmessage[0]){  --> real use
+if("สมัครบริการแจ้งเตือน" == $getmessage[0]){ 
  //   $stuid = $gmessage[1];
     // Make request to Time API
     //ini_set('user_agent','Mozilla/4.0 (compatible; MSIE 6.0)');
@@ -48,7 +48,7 @@ $getmessage = explode("#",$message);
   //  $message_to_reply = 'Test 55';
   //  $message_to_reply = 'Huh! what do you mean?';
   //  $message_to_reply = 'ขออภัยไม่สามารถลงทะเบียนได้';
-//}
+}
 
 //API Url
 $url = 'https://graph.facebook.com/v2.6/me/messages?access_token='.$access_token;
