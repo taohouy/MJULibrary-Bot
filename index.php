@@ -34,7 +34,7 @@ if("สมัครบริการแจ้งเตือน" == $getmessage
       $user_id = $getmessage[1];
       $url = 'http://www.library.mju.ac.th/api/getfb.php'; 
       
-      $data = "fn=register&fb_id='".$sender."'&user_id='".$user_id;
+      $data = "fn=register&fb_id=".$sender."&user_id=".$user_id;
       
       /*$data = array(
             'fn' => "login" 
