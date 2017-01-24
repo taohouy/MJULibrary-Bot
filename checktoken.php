@@ -16,4 +16,7 @@ if(isset($_REQUEST['hub_challenge'])) {
 if ($hub_verify_token === $verify_token) {
     echo $challenge;
 }
+echo $access_token;
+echo "<br>";
+echo $verify_token;
 ?>
