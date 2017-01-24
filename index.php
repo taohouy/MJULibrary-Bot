@@ -34,7 +34,7 @@ if("สมัครบริการแจ้งเตือน" == $getmessage
       $user_id = $getmessage[1];
       $url = 'http://www.library.mju.ac.th/api/getfb.php'; 
       
-      $data = "fn=register&user=$user_id";
+      $data = "fn=register&fb_id='".$sender."'&user_id='".$user_id;
       
       /*$data = array(
             'fn' => "login" 
@@ -50,15 +50,17 @@ if("สมัครบริการแจ้งเตือน" == $getmessage
         curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );
         $content = curl_exec( $ch );
         curl_close($ch);
-        
-        print_r($content);
+        if($content==1){
+        //print_r($content);
+            $message_to_reply = 'ขอบคุณที่สมัครใช้บริการ เราจะคอยส่งข้อมูลข่าวสารดีๆ ให้คุณได้รับทราบ';
+        }
         
       }catch(Exception $ex){
       
         echo $ex;
       }
     
-    $message_to_reply = 'ขอบคุณที่สมัครใช้บริการ เราจะคอยส่งข้อมูลข่าวสารดีๆ ให้คุณได้รับทราบ';
+    
 
 }
 
