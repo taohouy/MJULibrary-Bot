@@ -6,8 +6,8 @@ header('Content-Type: text/html; charset=utf-8');
  * Date: 24/04/16
  * Time: 3:26 PM
  */
-$access_token = "EAAC2FeF9PqIBABtJqmWJ3u8HIMeabKZA4NZAdZArxCzBx0sS5K9ZCTfUQh8pds3K9gANnsAIUpAMzZCMBpR9FBkOiWAKPYRfaoKIcKgXqNE7iM5UP1YShfUZAVJ2JISOnC6iYvdNrqaon82EZA2uDbQQ0Hne5ZBYk6L1ZB3Yiywv5FAZDZD";
-$verify_token = "fb_time_bot";
+$access_token = "EAAFiLqqrKJcBAJl3qCcn9fZAnujlQEhbXsROiW9xq336ZA8iOSMWhLPh1wZCpW9tZAjgDD25XPq10kWIZATkIWWJ8G0QRpSamjDiSI7ivoYobGdxMlztDRszonhXbkxcnXZBWKZAjj4CI0FUupk5ypHr3xAClcIARf0ngZAfCauGSgZDZD";
+$verify_token = "mju_library_bot";
 $hub_verify_token = null;
 
 if(isset($_REQUEST['hub_challenge'])) {
