@@ -27,27 +27,39 @@ $message = $input['entry'][0]['messaging'][0]['message']['text'];
 
 $message_to_reply = '';
 
-/**
- * Some Basic rules to validate incoming messages
- */
 $getmessage = explode("#",$message);
 
-//if(preg_match('RegisterLibraryAlert', $message)) {
-    
+
 if("สมัครบริการแจ้งเตือน" == $getmessage[0]){ 
- //   $stuid = $gmessage[1];
-    // Make request to Time API
-    //ini_set('user_agent','Mozilla/4.0 (compatible; MSIE 6.0)');
-    //$result = file_get_contents("http://www.timeapi.org/utc/now?format=%25a%20%25b%20%25d%20%25I:%25M:%25S%20%25Y");
-    //if($result != '') {
+      $user_id = $getmessage[1];
+      $url = 'http://www.library.mju.ac.th/api/getfb.php'; 
+      
+      $data = "fn=register&user=$user_id";
+      
+      /*$data = array(
+            'fn' => "login" 
+        );*/
+      
+      
+      try{
+        $ch = curl_init();
+        curl_setopt( $ch, CURLOPT_URL, $url );
+        curl_setopt( $ch, CURLOPT_POSTFIELDS, $data );
+        curl_setopt( $ch, CURLOPT_POST, true );
+        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );
+        $content = curl_exec( $ch );
+        curl_close($ch);
+        
+        print_r($content);
+        
+      }catch(Exception $ex){
+      
+        echo $ex;
+      }
+    
     $message_to_reply = 'ขอบคุณที่สมัครใช้บริการ เราจะคอยส่งข้อมูลข่าวสารดีๆ ให้คุณได้รับทราบ';
-     //   $message_to_reply = 'ขอบคุณ "'.$stuid.'" ที่สมัครใช้บริการ เราจะคอยส่งข้อมูลข่าวสารดีๆ ให้คุณได้รับทราบ';
-   //$message_to_reply = $getmessage[1];
-    //}
-//} else {
-  //  $message_to_reply = 'Test 55';
-  //  $message_to_reply = 'Huh! what do you mean?';
-  //  $message_to_reply = 'ขออภัยไม่สามารถลงทะเบียนได้';
+
 }
 
 //API Url
