@@ -6,7 +6,7 @@ header('Content-Type: text/html; charset=utf-8');
  * Date: 24/04/16
  * Time: 3:26 PM
  */
-$access_token = "EAAFiLqqrKJcBAJl3qCcn9fZAnujlQEhbXsROiW9xq336ZA8iOSMWhLPh1wZCpW9tZAjgDD25XPq10kWIZATkIWWJ8G0QRpSamjDiSI7ivoYobGdxMlztDRszonhXbkxcnXZBWKZAjj4CI0FUupk5ypHr3xAClcIARf0ngZAfCauGSgZDZD";
+$access_token = "EAAErkzQYJoQBAJa1r6995SyXy385Us6EjORzZAfymihtcNT6F1OmV1t8VQ7DCSzUGDIGp0QGGuXmBWMEhJ0HRNLPr59LuqTunG3Cw6LD3j3VpCBZAkgKlZByKAHyMM9VZBtiCHCCun2uzAFHODW2UfbEpOswdQqxv0lz4GZCLvQZDZD";
 $verify_token = "mju_library_bot";
 $hub_verify_token = null;
 
@@ -29,17 +29,13 @@ $message_to_reply = '';
 
 $getmessage = explode("#",$message);
 
-
+/*
 if("สมัครบริการแจ้งเตือน" == $getmessage[0]){ 
       $user_id = $getmessage[1];
       $url = 'http://www.library.mju.ac.th/api/getfb.php'; 
       
       $data = "fn=register&fb_id=".$sender."&user_id=".$user_id;
-      
-      /*$data = array(
-            'fn' => "login" 
-        );*/
-      
+    
       
       try{
         $ch = curl_init();
@@ -62,7 +58,7 @@ if("สมัครบริการแจ้งเตือน" == $getmessage
     
     
 
-}
+}*/
 
 //API Url
 $url = 'https://graph.facebook.com/v2.6/me/messages?access_token='.$access_token;
@@ -77,7 +73,7 @@ $jsonData = '{
         "id":"'.$sender.'"
     },
     "message":{
-        "text":"'.$message_to_reply.'"
+        "text":"'.$message.'"
     }
 }';
 
